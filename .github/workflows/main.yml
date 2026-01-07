@@ -34,12 +34,12 @@ jobs:
 
       - name: Build Docker Image
         run: |
-          docker build -t addTask /AddTaskTodoMicroservice
+          docker build -t addtask /AddTaskTodoMicroservice
 
       - name: Tag Docker Image for ACR
         run: |
-          docker tag addTask acrtodoappsaurav9454.azurecr.io/addTask:v1
+          docker tag addtask acrtodoappsaurav9454.azurecr.io/addtask:v1
 
       - name: Push Docker Image to ACR
         run: |
-          docker push acrtodoappsaurav9454.azurecr.io/addTask:v1
+          docker push acrtodoappsaurav9454.azurecr.io/addtask:v1
