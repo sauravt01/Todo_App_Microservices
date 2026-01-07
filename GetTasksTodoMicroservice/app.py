@@ -6,7 +6,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import os
 
 # Fetch the connection string from the environment variable
-connection_string = os.getenv("CONNECTION_STRING")
+connection_string = os.environ.get('CONNECTION_STRING')
 
 # Check if the connection string is available
 if connection_string:
