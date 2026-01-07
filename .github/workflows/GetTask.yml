@@ -33,10 +33,10 @@ jobs:
           az acr login --name acrtodoappsaurav9454
       - name: Build Docker Image
         run: |
-          docker build -t gettask GetTasksTodoMicroservice
+          docker build -t todomicroui MicroTodoUI
       - name: Tag Docker Image for ACR
         run: |
-          docker tag gettask acrtodoappsaurav9454.azurecr.io/gettask:v1
+          docker tag todomicroui acrtodoappsaurav9454.azurecr.io/todomicroui:v1
       - name: Push Docker Image to ACR
         run: |
-          docker push acrtodoappsaurav9454.azurecr.io/gettask:v1
+          docker push acrtodoappsaurav9454.azurecr.io/todomicroui:v1
