@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: todo-ui-ingress
 spec:
-  ingressClassName: azure-application-gateway
+  ingressClassName: nginx
   rules:
   - host: ui.6weathers.com
     http:
