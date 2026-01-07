@@ -19,5 +19,4 @@ spec:
         - containerPort: 8000
         env: 
         - name: CONNECTION_STRING
-          value: "Driver={ODBC Driver 18 for SQL Server};Server=tcp:sauravsql-dev.database.windows.net,1433;Database=database-saurav;Uid=devopsadmin;Pwd=P@ssw01rd@123;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"
-      
+          value: "Driver={ODBC Driver 18 for SQL Server};Server=tcp:sauravsql-dev.database.windows.net,1433;Database=sauravdb-dev123;Uid=devopsadmin;Pwd=P@ssw01rd@123;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"
