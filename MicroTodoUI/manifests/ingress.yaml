@@ -5,7 +5,7 @@ metadata:
 spec:
   ingressClassName: azure-application-gateway
   rules:
-  - host: ui.jhandu.shop
+  - host: ui.6weathers.com
     http:
       paths:
       - pathType: Prefix
