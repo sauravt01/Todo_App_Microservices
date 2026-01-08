@@ -1,7 +1,8 @@
 name: Build and Push to ACR
 
 on:
-  workflow_dispatch:  # Isse tum manually GitHub se trigger kar sakte ho
+  push:
+    branches: [ main ] 
 
 permissions:
   id-token: write
@@ -24,19 +25,19 @@ jobs:
       - name: Azure Login
         uses: Azure/login@v2.3.0
         with:
-          client-id: 001db49b-d412-42fd-a9cc-f52510276eba
-          tenant-id: 4cdd4678-908a-4b16-946b-2f469301a974
-          subscription-id: acd9510d-7e29-433d-8504-d10d34dba654
+          client-id: 9466890c-77a6-45c3-9335-cbc76c6768be
+          tenant-id: 45498cdf-914d-4435-8790-31bcb1d6af30
+          subscription-id: 331a949f-b38b-4711-a7fb-64ce9e156260
 
       - name: Log in to ACR
         run: |
-          az acr login --name acrtodoappsaurav9454
+          az acr login --name acrtodoappsaurav007
       - name: Build Docker Image
         run: |
           docker build -t deletetask DeleteTaskTodoMicroservice
       - name: Tag Docker Image for ACR
         run: |
-          docker tag deletetask acrtodoappsaurav9454.azurecr.io/deletetask:v1
+          docker tag deletetask acrtodoappsaurav007.azurecr.io/deletetask:v1
       - name: Push Docker Image to ACR
         run: |
-          docker push acrtodoappsaurav9454.azurecr.io/deletetask:v1
+          docker push acrtodoappsaurav007.azurecr.io/deletetask:v1
