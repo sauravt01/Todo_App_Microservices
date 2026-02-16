@@ -1,13 +1,19 @@
-project: default
-source:
-  repoURL: https://github.com/sauravt01/Todo_App_Microservices.git
-  path: MicroTodoUI/manifests
-  targetRevision: main
-destination:
-  server: https://kubernetes.default.svc
-  namespace: todoapp
-syncPolicy:
-  automated:
-    enabled: true
-  syncOptions:
-    - CreateNamespace=true
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: uiapp
+  namespace: argocd   # ArgoCD namespace
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/sauravt01/Todo_App_Microservices.git
+    path: MicroTodoUI/manifests
+    targetRevision: main
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: todoapp
+  syncPolicy:
+    automated:
+      enabled: true
+  # syncOptions:
+  #   - CreateNamespace=true
