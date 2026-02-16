@@ -11,6 +11,7 @@ permissions:
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
+    
 
     env:
       IMAGE_NAME: todo-add-tasks-api
