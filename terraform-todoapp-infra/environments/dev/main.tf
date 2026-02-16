@@ -48,7 +48,7 @@ module "aks" {
   depends_on = [module.rg]
   source     = "../../modules/azurerm_kubernetes_cluster"
   aks_name   = "aks-dev-todoapp-saurav"
-  location   = "northeurope"
+  location   = "eastus"
   rg_name    = "rg-dev-todoapp-0123"
   dns_prefix = "aks-dev-todoapp"
   tags       = local.common_tags
