@@ -20,5 +20,4 @@ spec:
         env: 
         - name: CONNECTION_STRING
           value: "Driver={ODBC Driver 18 for SQL Server};Server=tcp:sauravsql-dev-007.database.windows.net,1433;Database=sauravdb-dev007;Uid=devopsadmin;Pwd=P@ssw01rd@123;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"
-          
 

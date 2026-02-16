@@ -1,0 +1,13 @@
+project: default
+source:
+  repoURL: https://github.com/sauravt01/Todo_App_Microservices.git
+  path: DeleteTaskTodoMicroservice/manifests
+  targetRevision: main
+destination:
+  server: https://kubernetes.default.svc
+  namespace: todoapp
+syncPolicy:
+  automated:
+    enabled: true
+  syncOptions:
+    - CreateNamespace=true
