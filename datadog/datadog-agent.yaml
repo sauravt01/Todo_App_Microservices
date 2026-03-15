@@ -1,0 +1,69 @@
+kind: "DatadogAgent"
+apiVersion: "datadoghq.com/v2alpha1"
+metadata:
+  name: "datadog"
+spec:
+  global:
+    clusterName: "your-cluster-name-here"
+    site: "us5.datadoghq.com"
+    credentials:
+      apiSecret:
+        secretName: "datadog-secret"
+        keyName: "api-key"
+  features:
+    clusterChecks:
+      enabled: true
+    orchestratorExplorer:
+      enabled: true
+    apm:
+      instrumentation:
+        enabled: true
+        targets:
+          - name: "default-target"
+            ddTraceVersions:
+              java: "1"
+              python: "4"
+              js: "5"
+              php: "1"
+              dotnet: "3"
+              ruby: "2"
+            ddTraceConfigs:
+              - name: "DD_PROFILING_ENABLED"
+                value: "auto"
+              - name: "DD_DATA_STREAMS_ENABLED"
+                value: "true"
+              - name: "DD_RUM_ENABLED"
+                value: "true"
+              - name: "DD_RUM_APPLICATION_ID"
+                value: "a34c86e9-14a6-400c-8dc5-dabdc1646484"
+              - name: "DD_RUM_CLIENT_TOKEN"
+                value: "pub0e2bb5b9656e9eed1131b65999a1c76b"
+              - name: "DD_RUM_REMOTE_CONFIGURATION_ID"
+                value: "634d489a-9941-4df7-9e39-acf3b37c4bcc"
+              - name: "DD_RUM_SITE"
+                value: "us5.datadoghq.com"
+    logCollection:
+      enabled: true
+      containerCollectAll: true
+    asm:
+      threats:
+        enabled: true
+    cws:
+      enabled: true
+    cspm:
+      enabled: true
+    sbom:
+      enabled: true
+      containerImage:
+        enabled: true
+      host:
+        enabled: true
+    usm:
+      enabled: true
+  override:
+    clusterAgent:
+      containers:
+        cluster-agent:
+          env:
+            - name: "DD_ADMISSION_CONTROLLER_ADD_AKS_SELECTORS"
+              value: "true"
